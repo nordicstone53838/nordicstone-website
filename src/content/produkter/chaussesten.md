@@ -1,7 +1,7 @@
 ---
 title: Chaussesten
 teaser: Den lille alsidige granitsten til haver, stier, indkørsler og terrasser.
-maal: Ca. 9x9x9 cm eller 11x11x11 cm
+maal: Ca. 8x10 eller 8x11 cm
 anvendelse: Haver, indkørsler, stier og terrasser
 billede: ../../assets/billeder/chaussesten-3.jpg
 galleri:
@@ -16,6 +16,6 @@ galleri:
 order: 3
 ---
 
-Chaussesten er en belægningssten af hugget granit i størrelsen ca. 9x9x9 cm eller 11x11x11 cm.
+Chaussesten er en belægningssten af hugget granit i størrelsen ca. 8x10 eller 8x11 cm.
 
 Den anvendes til belægning i byer, haver, indkørsler, stier og terrasser - og er med sin lille størrelse velegnet til buede forløb og detaljer, hvor større sten kommer til kort.
