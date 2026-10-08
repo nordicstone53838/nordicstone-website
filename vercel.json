@@ -1,11 +1,74 @@
 {
   "redirects": [
-    { "source": "/bordursten", "destination": "/sortiment/bordursten/", "permanent": true },
-    { "source": "/brosten", "destination": "/sortiment/brosten/", "permanent": true },
-    { "source": "/chaussesten", "destination": "/sortiment/chaussesten/", "permanent": true },
-    { "source": "/granitkantsten", "destination": "/sortiment/granitkantsten/", "permanent": true },
-    { "source": "/granitkantsten%E2%80%8B", "destination": "/sortiment/granitkantsten/", "permanent": true },
-    { "source": "/savet-brosten", "destination": "/sortiment/savet-brosten/", "permanent": true },
-    { "source": "/skaerver", "destination": "/sortiment/skaerver/", "permanent": true }
+    {
+      "source": "/bordursten",
+      "destination": "/sortiment/bordursten/",
+      "permanent": true
+    },
+    {
+      "source": "/brosten",
+      "destination": "/sortiment/brosten/",
+      "permanent": true
+    },
+    {
+      "source": "/chaussesten",
+      "destination": "/sortiment/chaussesten/",
+      "permanent": true
+    },
+    {
+      "source": "/granitkantsten",
+      "destination": "/sortiment/granitkantsten/",
+      "permanent": true
+    },
+    {
+      "source": "/granitkantsten%E2%80%8B",
+      "destination": "/sortiment/granitkantsten/",
+      "permanent": true
+    },
+    {
+      "source": "/savet-brosten",
+      "destination": "/sortiment/savet-brosten/",
+      "permanent": true
+    },
+    {
+      "source": "/skaerver",
+      "destination": "/sortiment/skaerver/",
+      "permanent": true
+    },
+    {
+      "source": "/bordursten/",
+      "destination": "/sortiment/bordursten/",
+      "permanent": true
+    },
+    {
+      "source": "/brosten/",
+      "destination": "/sortiment/brosten/",
+      "permanent": true
+    },
+    {
+      "source": "/chaussesten/",
+      "destination": "/sortiment/chaussesten/",
+      "permanent": true
+    },
+    {
+      "source": "/granitkantsten/",
+      "destination": "/sortiment/granitkantsten/",
+      "permanent": true
+    },
+    {
+      "source": "/granitkantsten%E2%80%8B/",
+      "destination": "/sortiment/granitkantsten/",
+      "permanent": true
+    },
+    {
+      "source": "/savet-brosten/",
+      "destination": "/sortiment/savet-brosten/",
+      "permanent": true
+    },
+    {
+      "source": "/skaerver/",
+      "destination": "/sortiment/skaerver/",
+      "permanent": true
+    }
   ]
 }
