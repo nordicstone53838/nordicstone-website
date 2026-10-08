@@ -1,4 +1,5 @@
 ---
+import '../styles/fonts.css';
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import logo from '../assets/billeder/logo.png';
@@ -25,12 +26,8 @@ const {
     <title>{title} | Nordic Stone</title>
     <meta name="description" content={description} />
     <link rel="icon" href="/favicon.jpg" type="image/jpeg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin />
   </head>
   <body>
     <div class="topbar">
@@ -100,7 +97,7 @@ const {
           </ul>
         </div>
         <div class="footer-meta">
-          CVR 43023543 · Nordic Stone · Besøg på lager efter aftale
+          Nordic Stone ApS · Skræmvej 7, 9690 Fjerritslev · CVR 43023543 · Besøg på lager efter aftale · <a href="/privatlivspolitik/">Privatlivspolitik</a>
         </div>
       </div>
     </footer>

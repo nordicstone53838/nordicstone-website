@@ -606,3 +606,19 @@ img { max-width: 100%; display: block; }
 }
 .form-status.ok { background: #e6f4ea; color: #1e5e2f; }
 .form-status.error { background: #fdecea; color: #8a1f17; }
+
+/* --- Juridiske sider (privatlivspolitik) --- */
+.legal h3 {
+  margin: 2rem 0 0.5rem;
+  font-size: 1.15rem;
+  color: var(--navy);
+}
+.legal ul { color: var(--ink-soft); padding-left: 1.2rem; }
+.legal li { margin: 0.3rem 0; }
+
+.form-note {
+  margin: 0.9rem 0 0;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.site-footer .footer-meta a { color: inherit; text-decoration: underline; }
