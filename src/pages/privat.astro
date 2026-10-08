@@ -1,0 +1,224 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+
+import heroFoto from '../assets/billeder/galleri-2.jpg';
+import heineFoto from '../assets/billeder/heine.jpg';
+
+import galleri3 from '../assets/billeder/galleri-3.jpg';
+import galleri6 from '../assets/billeder/galleri-6.jpg';
+import galleri7 from '../assets/billeder/galleri-7.jpg';
+import galleri9 from '../assets/billeder/galleri-9.jpg';
+import galleri5 from '../assets/billeder/galleri-5.jpg';
+import galleri13 from '../assets/billeder/galleri-13.jpg';
+
+const referencer = [
+  { foto: galleri6, alt: 'Havegang og terrasse af chaussesten op mod græsplæne' },
+  { foto: galleri3, alt: 'Gårdsplads med chaussesten i vifteforbandt ved moderne hus' },
+  { foto: galleri7, alt: 'Granittrappe og chaussesten ved sortmalet træhus' },
+  { foto: galleri13, alt: 'Indkørsel af genbrugte brosten foran moderne villa' },
+  { foto: galleri9, alt: 'Brostensbelægning ved gult byhus i Skagen-stil' },
+  { foto: galleri5, alt: 'Terrasse af chaussesten ved hvidt hus med sorte vinduer' },
+];
+---
+
+<Base
+  title="Genbrugt granit til din have og indkørsel"
+  description="Drømmer du om en indkørsel, terrasse eller havegang i ægte granit? Nordic Stone leverer genbrugte nordiske natursten til private - med rådgivning hele vejen."
+  enkel
+>
+  <section class="hero">
+    <div class="hero-bg">
+      <Image
+        src={heroFoto}
+        alt="Stor indkørsel af genbrugte brosten ved hvid villa"
+        widths={[800, 1400, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="wrap">
+      <span class="kicker">Til dig med hus og have</span>
+      <h1>Få en indkørsel, der holder i generationer</h1>
+      <p class="lead">
+        Genbrugte granitsten med ægte patina - til indkørslen, terrassen,
+        havegangen eller trappen. Sten, der allerede har holdt i 100 år på
+        danske gader, og som sagtens holder 100 til hos dig.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#tilbud">Få et uforpligtende tilbud</a>
+        <a class="btn btn-ghost" href="tel:+4540229696">Ring +45 40 22 96 96</a>
+      </div>
+      <div class="hero-facts">
+        <div><strong>Ægte granit</strong>Ikke beton - natursten</div>
+        <div><strong>100% genbrug</strong>Bæredygtigt valg med patina</div>
+        <div><strong>Personlig rådgivning</strong>Snak direkte med Heine</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Derfor genbrugt granit</span>
+      <h2>Smukkere end nyt - og holder længere end alt andet</h2>
+      <div class="values" style="margin-top: 2.4rem;">
+        <div class="value-card">
+          <span class="num">01</span>
+          <h3>Patina fra dag ét</h3>
+          <p>
+            Brugte sten har en varm, levet overflade, som nye sten og
+            betonfliser aldrig får. Din belægning ser "rigtig" ud fra den dag,
+            den bliver lagt.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">02</span>
+          <h3>Holder i generationer</h3>
+          <p>
+            Granit tåler frost, salt, biler og tid. Stenene har allerede bevist
+            det gennem årtier på gader og torve.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">03</span>
+          <h3>Bæredygtigt valg</h3>
+          <p>
+            Genbrug af natursten sparer råstoffer og CO2. Du får et grønnere
+            valg - uden at gå på kompromis med kvaliteten.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">04</span>
+          <h3>Minimal vedligeholdelse</h3>
+          <p>
+            Granit skal hverken males, olieres eller udskiftes. Belægningen
+            bliver kun flottere med årene.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="kicker">Inspiration</span>
+      <h2>Sådan ser det ud hjemme hos andre</h2>
+      <p class="lead" style="margin-bottom: 2.4rem;">
+        Indkørsler, terrasser, havegange og trapper - alle med genbrugte
+        nordiske granitsten.
+      </p>
+      <div class="galleri-grid">
+        {
+          referencer.map((r) => (
+            <figure>
+              <Image
+                src={r.foto}
+                alt={r.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 700px) 100vw, 380px"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="wrap">
+      <span class="kicker">Sådan foregår det</span>
+      <h2>Fra idé til færdig belægning</h2>
+      <div class="values" style="margin-top: 2.4rem;">
+        <div class="value-card">
+          <span class="num">TRIN 1</span>
+          <h3>Fortæl om dit projekt</h3>
+          <p>
+            Ring eller skriv - fortæl hvad du drømmer om, og cirka hvor mange
+            kvadratmeter det drejer sig om.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">TRIN 2</span>
+          <h3>Få rådgivning og tilbud</h3>
+          <p>
+            Vi hjælper dig med at vælge den rigtige sten og regne mængderne ud
+            - og du får et uforpligtende tilbud.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">TRIN 3</span>
+          <h3>Stenene kommer hjem til dig</h3>
+          <p>
+            Vi aftaler afhentning eller levering, så stenene er klar, når din
+            anlægsgartner eller brolægger er det.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tilbud">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <span class="kicker">Uforpligtende tilbud</span>
+          <h2>Hvad drømmer du om?</h2>
+          <p class="lead">
+            Udfyld formularen, så ringer vi dig op og hjælper dig videre - helt
+            uforpligtende. Eller ring direkte til Heine på
+            <a href="tel:+4540229696">+45 40 22 96 96</a>.
+          </p>
+          <div class="split" style="grid-template-columns: 140px 1fr; gap: 1.4rem; margin-top: 2rem; align-items: center;">
+            <div class="foto">
+              <Image
+                src={heineFoto}
+                alt="Heine Jensen fra Nordic Stone"
+                widths={[280]}
+                sizes="140px"
+              />
+            </div>
+            <p style="margin: 0; color: var(--ink-soft);">
+              <strong style="color: var(--navy);">Heine Jensen</strong><br />
+              Nordic Stone<br />
+              Man-fre 07-16 · Lør 09-12
+            </p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="tilbudsform">
+          <label for="navn">Navn *</label>
+          <input id="navn" name="navn" type="text" required />
+
+          <label for="telefon">Telefonnummer *</label>
+          <input id="telefon" name="telefon" type="tel" required />
+
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="besked">Hvad skal stenene bruges til?</label>
+          <textarea
+            id="besked"
+            name="besked"
+            rows="4"
+            placeholder="Fx: Indkørsel på ca. 60 m2 - overvejer brosten eller chaussesten"
+          ></textarea>
+
+          <button class="btn btn-primary" type="submit">Få et uforpligtende tilbud</button>
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { setupContactForm } from '../scripts/contact-form';
+
+  setupContactForm('tilbudsform', {
+    subject: (data) => `Tilbudsforespørgsel fra ${data.get('navn')} (privat)`,
+    labels: { navn: 'Navn', telefon: 'Telefon', email: 'Email', besked: 'Projekt' },
+    successMessage: 'Tak! Vi ringer dig op med et uforpligtende tilbud.',
+  });
+</script>

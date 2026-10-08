@@ -1,0 +1,89 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base
+  title="Kontakt"
+  description="Kontakt Nordic Stone - ring, skriv eller aftal et besøg på lageret. Telefon +45 40 22 96 96."
+>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Kontakt</span>
+      <h2>Lad os tage en snak om dit projekt</h2>
+      <p class="lead" style="margin-bottom: 2.5rem;">
+        Ring, skriv eller udfyld formularen - så vender vi tilbage hurtigst
+        muligt.
+      </p>
+
+      <div class="contact-grid">
+        <div>
+          <ul class="contact-list">
+            <li>
+              <strong>Telefon</strong>
+              <a href="tel:+4540229696">+45 40 22 96 96 (Heine Jensen)</a>
+            </li>
+            <li>
+              <strong>Email</strong>
+              <a href="mailto:hje@nordicstone.dk">hje@nordicstone.dk</a>
+            </li>
+            <li>
+              <strong>Adresse</strong>
+              <span>Skræmvej 7, 9690 Fjerritslev</span>
+            </li>
+            <li>
+              <strong>CVR</strong>
+              <span>43023543</span>
+            </li>
+            <li>
+              <strong>Mandag-fredag</strong>
+              <span class="hours">07.00-16.00</span>
+            </li>
+            <li>
+              <strong>Lørdag</strong>
+              <span class="hours">09.00-12.00</span>
+            </li>
+            <li>
+              <strong>Søndag</strong>
+              <span class="hours">Lukket</span>
+            </li>
+          </ul>
+          <p class="note">
+            Kontakt os for at aftale besøg på lageret - vi har ikke lager på
+            ovenstående adresse.
+          </p>
+        </div>
+
+        <form
+          class="contact-form"
+          id="kontaktform"
+        >
+          <label for="navn">Navn *</label>
+          <input id="navn" name="navn" type="text" required />
+
+          <label for="telefon">Telefonnummer *</label>
+          <input id="telefon" name="telefon" type="tel" required />
+
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="besked">Besked</label>
+          <textarea id="besked" name="besked" rows="5"></textarea>
+
+          <button class="btn btn-primary" type="submit">Send besked</button>
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { setupContactForm } from '../scripts/contact-form';
+
+  setupContactForm('kontaktform', {
+    subject: (data) => `Forespørgsel fra ${data.get('navn')} via nordicstone.dk`,
+    labels: { navn: 'Navn', telefon: 'Telefon', email: 'Email', besked: 'Besked' },
+    successMessage: 'Tak for din besked! Vi vender tilbage hurtigst muligt.',
+  });
+</script>

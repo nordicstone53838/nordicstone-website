@@ -1,0 +1,260 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+
+import heroFoto from '../assets/billeder/bordursten-1.jpg';
+import lagerFoto from '../assets/billeder/kantsten-1.jpg';
+import heineFoto from '../assets/billeder/heine.jpg';
+
+import galleri8 from '../assets/billeder/galleri-8.jpg';
+import galleri10 from '../assets/billeder/galleri-10.jpg';
+import galleri11 from '../assets/billeder/galleri-11.jpg';
+import galleri9 from '../assets/billeder/galleri-9.jpg';
+import savetBrosten from '../assets/billeder/savet-brosten-1.jpg';
+import galleri2 from '../assets/billeder/galleri-2.jpg';
+
+const referencer = [
+  { foto: galleri8, alt: 'Brostensbelagt gårdsplads og fortov ved gult byhus i Skagen-stil' },
+  { foto: galleri10, alt: 'Gårdrum med genbrugte brosten mellem byhuse' },
+  { foto: galleri11, alt: 'Brostensbelægning i gårdrum med afvanding og granitkant' },
+  { foto: galleri9, alt: 'Brostensbelægning ved gult byhus i Skagen-stil' },
+  { foto: savetBrosten, alt: 'Savet brosten med jetbrændt top lagt i forbandt' },
+  { foto: galleri2, alt: 'Stor indkørsel af genbrugte brosten ved hvid villa' },
+];
+---
+
+<Base
+  title="Genbrugt granit til erhverv og anlægsprojekter"
+  description="Nordic Stone leverer genbrugte nordiske natursten til anlægsgartnere, brolæggere, entreprenører og kommuner - brosten, chaussesten, kantsten og bordursten i de mængder, opgaven kræver."
+  enkel
+>
+  <section class="hero">
+    <div class="hero-bg">
+      <Image
+        src={heroFoto}
+        alt="Bordursten og brosten i klassisk gadebelægning"
+        widths={[800, 1400, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="wrap">
+      <span class="kicker">Til anlægsgartnere, brolæggere og entreprenører</span>
+      <h1>Genbrugt granit i de mængder, opgaven kræver</h1>
+      <p class="lead">
+        Brosten, chaussesten, kantsten og bordursten - nye, brugte og slidte
+        varianter til anlægsprojekter, byrum og belægninger. Én direkte
+        kontakt, hurtigt tilbud og sten klar til din tidsplan.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#tilbud">Få et tilbud på dit projekt</a>
+        <a class="btn btn-ghost" href="tel:+4540229696">Ring +45 40 22 96 96</a>
+      </div>
+      <div class="hero-facts">
+        <div><strong>Nye, brugte & slidte</strong>Varianter til enhver opgave</div>
+        <div><strong>Afhentning eller levering</strong>Efter aftale - klar til din tidsplan</div>
+        <div><strong>Direkte linje</strong>Snak med Heine, ikke et callcenter</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Derfor Nordic Stone</span>
+      <h2>En leverandør, der kender håndværket</h2>
+      <div class="values" style="margin-top: 2.4rem;">
+        <div class="value-card">
+          <span class="num">01</span>
+          <h3>Mængder efter opgaven</h3>
+          <p>
+            Fra en enkelt gårdsplads til større anlægsprojekter - fortæl os
+            kvadratmeter og stentype, så finder vi mængden til dig.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">02</span>
+          <h3>Kvalitet du kan lægge</h3>
+          <p>
+            Vi kender hver stentype og sorterer efter opgaven, så du får sten,
+            der er til at arbejde med - uden ubehagelige overraskelser på
+            pladsen.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">03</span>
+          <h3>Genbrug til det grønne regnskab</h3>
+          <p>
+            Genbrugte natursten sparer råstoffer og CO2 i forhold til nybrudt
+            granit - et stærkt kort i projekter med fokus på bæredygtighed.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">04</span>
+          <h3>Hurtigt og ærligt tilbud</h3>
+          <p>
+            Ring eller skriv, og få svar på pris, lagerstatus og levering -
+            uden mellemled og uden omsvøb.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="kicker">Referencer</span>
+      <h2>Belægninger, der holder til brug</h2>
+      <p class="lead" style="margin-bottom: 2.4rem;">
+        Gårdrum, fortove, pladser og indkørsler - lagt med genbrugte nordiske
+        granitsten.
+      </p>
+      <div class="galleri-grid">
+        {
+          referencer.map((r) => (
+            <figure>
+              <Image
+                src={r.foto}
+                alt={r.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 700px) 100vw, 380px"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div class="foto">
+          <Image
+            src={lagerFoto}
+            alt="Paller med genbrugte granitkantsten på lager"
+            widths={[500, 900]}
+            sizes="(max-width: 820px) 100vw, 540px"
+          />
+        </div>
+        <div>
+          <span class="kicker">Lager og levering</span>
+          <h2>Sten på paller - klar til pladsen</h2>
+          <p>
+            Stenene står sorteret på paller på vores lager. Vi aftaler
+            afhentning eller levering, så materialerne er fremme, når dit
+            sjak er klar - hverken før eller efter.
+          </p>
+          <p>
+            Besøg på lageret sker efter aftale - ring til Heine, så finder vi
+            et tidspunkt, hvor du kan se stenene, inden du bestiller.
+          </p>
+          <blockquote>
+            "Fortæl mig, hvad opgaven kræver - så finder jeg stenene, og du
+            får et tilbud med det samme."
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="wrap">
+      <span class="kicker">Sådan foregår det</span>
+      <h2>Fra forespørgsel til levering</h2>
+      <div class="values" style="margin-top: 2.4rem;">
+        <div class="value-card">
+          <span class="num">TRIN 1</span>
+          <h3>Send din forespørgsel</h3>
+          <p>
+            Ring eller skriv med stentype, cirka-mængde og gerne tidsplan -
+            en tegning eller et udbudsmateriale er også velkomment.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">TRIN 2</span>
+          <h3>Få pris og lagerstatus</h3>
+          <p>
+            Du får et konkret tilbud med pris, mængde og leveringsmulighed -
+            og ærlig besked, hvis en anden sten løser opgaven bedre.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">TRIN 3</span>
+          <h3>Stenene kommer til pladsen</h3>
+          <p>
+            Vi aftaler afhentning eller levering, så stenene står klar, når
+            arbejdet går i gang.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tilbud">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div>
+          <span class="kicker">Tilbud til erhverv</span>
+          <h2>Hvad kræver dit projekt?</h2>
+          <p class="lead">
+            Udfyld formularen, så vender vi tilbage med pris og lagerstatus.
+            Eller ring direkte til Heine på
+            <a href="tel:+4540229696">+45 40 22 96 96</a>.
+          </p>
+          <div class="split" style="grid-template-columns: 140px 1fr; gap: 1.4rem; margin-top: 2rem; align-items: center;">
+            <div class="foto">
+              <Image
+                src={heineFoto}
+                alt="Heine Jensen fra Nordic Stone"
+                widths={[280]}
+                sizes="140px"
+              />
+            </div>
+            <p style="margin: 0; color: var(--ink-soft);">
+              <strong style="color: var(--navy);">Heine Jensen</strong><br />
+              Nordic Stone<br />
+              Man-fre 07-16 · Lør 09-12
+            </p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="erhvervsform">
+          <label for="firma">Firma *</label>
+          <input id="firma" name="firma" type="text" required />
+
+          <label for="navn">Kontaktperson *</label>
+          <input id="navn" name="navn" type="text" required />
+
+          <label for="telefon">Telefonnummer *</label>
+          <input id="telefon" name="telefon" type="tel" required />
+
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="besked">Beskriv opgaven</label>
+          <textarea
+            id="besked"
+            name="besked"
+            rows="4"
+            placeholder="Fx: Ca. 400 m2 brugte brosten til gårdrenovering - levering i uge 45"
+          ></textarea>
+
+          <button class="btn btn-primary" type="submit">Få et tilbud på dit projekt</button>
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  import { setupContactForm } from '../scripts/contact-form';
+
+  setupContactForm('erhvervsform', {
+    subject: (data) => `Tilbudsforespørgsel fra ${data.get('firma')} (erhverv)`,
+    labels: { firma: 'Firma', navn: 'Kontaktperson', telefon: 'Telefon', email: 'Email', besked: 'Opgave' },
+    successMessage: 'Tak! Vi kontakter dig hurtigst muligt med et tilbud.',
+  });
+</script>

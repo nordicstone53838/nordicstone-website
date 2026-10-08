@@ -1,0 +1,94 @@
+---
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const produkter = await getCollection('produkter');
+  return produkter.map((p) => ({
+    params: { slug: p.id },
+    props: { produkt: p },
+  }));
+}
+
+const { produkt } = Astro.props;
+const { Content } = await render(produkt);
+const galleri = produkt.data.galleri;
+---
+
+<Base title={produkt.data.title} description={produkt.data.teaser}>
+  <section class="section">
+    <div class="wrap">
+      <div class="detail-hero">
+        <div>
+          <span class="kicker">
+            <a href="/sortiment/" style="text-decoration: none; color: inherit;">← Sortiment</a>
+          </span>
+          <h1 style="font-size: clamp(2rem, 4vw, 3rem);">{produkt.data.title}</h1>
+          <p class="lead">{produkt.data.teaser}</p>
+
+          {
+            (produkt.data.maal || produkt.data.anvendelse) && (
+              <dl class="facts">
+                {produkt.data.maal && (
+                  <div class="fact">
+                    <dt>Mål</dt>
+                    <dd>{produkt.data.maal}</dd>
+                  </div>
+                )}
+                {produkt.data.anvendelse && (
+                  <div class="fact">
+                    <dt>Anvendelse</dt>
+                    <dd>{produkt.data.anvendelse}</dd>
+                  </div>
+                )}
+              </dl>
+            )
+          }
+        </div>
+        {
+          produkt.data.billede && (
+            <div class="foto">
+              <Image
+                src={produkt.data.billede}
+                alt={produkt.data.title}
+                widths={[600, 1000]}
+                sizes="(max-width: 820px) 100vw, 520px"
+                loading="eager"
+              />
+            </div>
+          )
+        }
+      </div>
+
+      <div class="prose" style="margin-top: 2.5rem;">
+        <Content />
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <a class="btn btn-dark" href="/kontakt/">Forespørg på {produkt.data.title.toLowerCase()}</a>
+      </div>
+
+      {
+        galleri.length > 0 && (
+          <div style="margin-top: 3.5rem;">
+            <span class="kicker">Galleri</span>
+            <h2 style="font-size: 1.6rem;">Se {produkt.data.title.toLowerCase()} i brug</h2>
+            <div class="galleri-grid" style="margin-top: 1.5rem;">
+              {galleri.map((foto) => (
+                <figure>
+                  <Image
+                    src={foto}
+                    alt={produkt.data.title}
+                    widths={[400, 800]}
+                    sizes="(max-width: 700px) 100vw, 380px"
+                  />
+                </figure>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Base>

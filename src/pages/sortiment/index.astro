@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const produkter = (await getCollection('produkter')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base
+  title="Sortiment"
+  description="Se vores sortiment af genbrugte nordiske natursten: brosten, chaussesten, granitkantsten, bordursten, pigsten og skærver."
+>
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Sortiment</span>
+      <h2>Genbrugte nordiske natursten</h2>
+      <p class="lead" style="margin-bottom: 2.6rem;">
+        Alle vores sten kan bruges til terrasser, indkørsler, trappetrin og
+        andre belægninger. Kontakt os for lagerstatus og priser.
+      </p>
+      <div class="product-grid">
+        {
+          produkter.map((p) => (
+            <a class="product-card" href={`/sortiment/${p.id}/`}>
+              <div class="product-thumb">
+                {p.data.billede ? (
+                  <Image
+                    src={p.data.billede}
+                    alt={p.data.title}
+                    widths={[400, 700]}
+                    sizes="(max-width: 700px) 100vw, 360px"
+                  />
+                ) : (
+                  <div class="product-thumb-fallback" />
+                )}
+              </div>
+              <div class="product-body">
+                <h3>{p.data.title}</h3>
+                <p>{p.data.teaser}</p>
+                <div class="product-more">Læs mere →</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Er du i tvivl om, hvilken sten der passer?</h2>
+      <p>Ring til os - vi rådgiver gerne om valg af sten, mængder og lægning.</p>
+      <a class="tel" href="tel:+4540229696">+45 40 22 96 96</a>
+      <a class="btn btn-primary" href="/kontakt/">Kontakt os</a>
+    </div>
+  </section>
+</Base>

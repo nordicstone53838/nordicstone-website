@@ -1,0 +1,108 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/billeder/logo.png';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Kampagne-/landingsside: skjul navigationen, så besøgende ikke klikker væk */
+  enkel?: boolean;
+}
+
+const {
+  title,
+  description = 'Nordic Stone er din leverandør af genbrugte nordiske natursten - brosten, chaussesten, kantsten og meget mere.',
+  enkel = false,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Nordic Stone</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.jpg" type="image/jpeg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="wrap">
+        <span class="aabningstider">Man-fre 07-16 · Lør 09-12</span>
+        <span>Ring: <a href="tel:+4540229696">+45 40 22 96 96</a></span>
+      </div>
+    </div>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Nordic Stone - forside">
+          <Image src={logo} alt="Nordic Stone" height={84} densities={[1, 2]} />
+        </a>
+        <nav class="site-nav">
+          {
+            enkel ? (
+              <a class="cta" href="tel:+4540229696">Ring +45 40 22 96 96</a>
+            ) : (
+              <>
+                <a href="/sortiment/">Sortiment</a>
+                <a href="/om-os/">Om os</a>
+                <a class="cta" href="/kontakt/">Kontakt os</a>
+              </>
+            )
+          }
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div>
+          <h4>Nordic Stone</h4>
+          <p>
+            Specialiseret i genbrugte nordiske natursten - bæredygtig kvalitet,
+            der har pyntet gader og torve i generationer.
+          </p>
+        </div>
+        <div>
+          <h4>Sortiment</h4>
+          <ul>
+            <li><a href="/sortiment/brosten/">Brosten</a></li>
+            <li><a href="/sortiment/chaussesten/">Chaussesten</a></li>
+            <li><a href="/sortiment/granitkantsten/">Granitkantsten</a></li>
+            <li><a href="/sortiment/bordursten/">Bordursten</a></li>
+            <li><a href="/sortiment/">Se alt →</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+4540229696">+45 40 22 96 96</a></li>
+            <li><a href="mailto:hje@nordicstone.dk">hje@nordicstone.dk</a></li>
+            <li>Skræmvej 7, 9690 Fjerritslev</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Åbningstider</h4>
+          <ul>
+            <li>Mandag-fredag: 07.00-16.00</li>
+            <li>Lørdag: 09.00-12.00</li>
+            <li>Søndag: Lukket</li>
+          </ul>
+        </div>
+        <div class="footer-meta">
+          CVR 43023543 · Nordic Stone · Besøg på lager efter aftale
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,214 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+import heroFoto from '../assets/billeder/galleri-13.jpg';
+import heineFoto from '../assets/billeder/heine.jpg';
+import ctaFoto from '../assets/billeder/brosten-3.jpg';
+
+import galleri3 from '../assets/billeder/galleri-3.jpg';
+import galleri6 from '../assets/billeder/galleri-6.jpg';
+import galleri7 from '../assets/billeder/galleri-7.jpg';
+import galleri2 from '../assets/billeder/galleri-2.jpg';
+import galleri9 from '../assets/billeder/galleri-9.jpg';
+import galleri12 from '../assets/billeder/galleri-12.jpg';
+
+const referencer = [
+  { foto: galleri3, alt: 'Gårdsplads med chaussesten i vifteforbandt ved moderne hus' },
+  { foto: galleri6, alt: 'Havegang og terrasse af chaussesten op mod græsplæne' },
+  { foto: galleri7, alt: 'Granittrappe og chaussesten ved sortmalet træhus' },
+  { foto: galleri2, alt: 'Stor indkørsel af genbrugte brosten ved hvid villa' },
+  { foto: galleri9, alt: 'Brostensbelægning ved gult byhus i Skagen-stil' },
+  { foto: galleri12, alt: 'Chaussesten i vifteforbandt foran moderne indgangsparti' },
+];
+
+const produkter = (await getCollection('produkter')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<Base title="Specialiseret i brugt granit">
+  <section class="hero">
+    <div class="hero-bg">
+      <Image
+        src={heroFoto}
+        alt="Indkørsel af genbrugte brosten foran moderne villa"
+        widths={[800, 1400, 2000]}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+    <div class="wrap">
+      <span class="kicker">Genbrugte nordiske natursten</span>
+      <h1>Granit med historie - klar til dit projekt</h1>
+      <p class="lead">
+        Hos Nordic Stone finder du topkvalitet i genbrugte nordiske granitsten.
+        Brosten, chaussesten og kantsten, der allerede har bevist deres
+        holdbarhed gennem generationer på gader og torve.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/sortiment/">Se sortimentet</a>
+        <a class="btn btn-ghost" href="/kontakt/">Få rådgivning</a>
+      </div>
+      <div class="hero-facts">
+        <div><strong>100% genbrug</strong>Sten med patina og historie</div>
+        <div><strong>Private & erhverv</strong>Sten til alle projekter</div>
+        <div><strong>Kompetent rådgivning</strong>Ring +45 40 22 96 96</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Hvorfor genbrugt granit?</span>
+      <h2>Bæredygtighed, der kan ses</h2>
+      <p class="lead">
+        Vores granit er bæredygtigt, da det tidligere har pyntet gader og torve
+        i mange byer. Stenene får nyt liv i din indkørsel, terrasse eller
+        belægning - med en patina, nye sten aldrig kan efterligne.
+      </p>
+      <div class="values" style="margin-top: 2.6rem;">
+        <div class="value-card">
+          <span class="num">01</span>
+          <h3>Genanvendelse</h3>
+          <p>
+            Hver sten har allerede levet ét liv. Ved at genbruge natursten
+            sparer vi både råstoffer og CO2 - uden at gå på kompromis med
+            kvaliteten.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">02</span>
+          <h3>Ansvarlighed</h3>
+          <p>
+            Vi rådgiver ærligt og kompetent, så du får den rigtige sten til
+            opgaven - hvad enten du er privat eller virksomhed.
+          </p>
+        </div>
+        <div class="value-card">
+          <span class="num">03</span>
+          <h3>Passioneret</h3>
+          <p>
+            Natursten er vores håndværk og passion. Vi kender hver stentype og
+            hjælper dig hele vejen fra idé til færdig belægning.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <span class="kicker">Sortiment</span>
+      <h2>Vores sten</h2>
+      <p class="lead" style="margin-bottom: 2.6rem;">
+        Nye, brugte og slidte varianter - til terrasser, indkørsler, trapper og
+        belægninger i alle størrelser.
+      </p>
+      <div class="product-grid">
+        {
+          produkter.map((p) => (
+            <a class="product-card" href={`/sortiment/${p.id}/`}>
+              <div class="product-thumb">
+                {p.data.billede ? (
+                  <Image
+                    src={p.data.billede}
+                    alt={p.data.title}
+                    widths={[400, 700]}
+                    sizes="(max-width: 700px) 100vw, 360px"
+                  />
+                ) : (
+                  <div class="product-thumb-fallback" />
+                )}
+              </div>
+              <div class="product-body">
+                <h3>{p.data.title}</h3>
+                <p>{p.data.teaser}</p>
+                <div class="product-more">Læs mere →</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <span class="kicker">Referencer</span>
+      <h2>Se stenene i brug</h2>
+      <p class="lead" style="margin-bottom: 2.6rem;">
+        Fra moderne villaer til klassiske byhuse - genbrugt granit klæder dem
+        alle.
+      </p>
+      <div class="galleri-grid">
+        {
+          referencer.map((r) => (
+            <figure>
+              <Image
+                src={r.foto}
+                alt={r.alt}
+                widths={[400, 800]}
+                sizes="(max-width: 700px) 100vw, 380px"
+              />
+            </figure>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-navy">
+    <div class="wrap">
+      <div class="split">
+        <div class="foto">
+          <Image
+            src={heineFoto}
+            alt="Heine Jensen foran bunker af genbrugte chaussesten"
+            widths={[500, 900]}
+            sizes="(max-width: 820px) 100vw, 540px"
+          />
+        </div>
+        <div>
+          <span class="kicker">Manden bag</span>
+          <h2>Velkommen til Nordic Stone</h2>
+          <p>
+            Bag Nordic Stone står Heine Jensen, som har mange års erfaring med
+            brugte granitmaterialer. Tilgangen er enkel: brugte natursten til
+            alle projekter - både hos private og virksomheder - og ærlig,
+            kompetent rådgivning hele vejen.
+          </p>
+          <blockquote>
+            "Hvis du søger en belægning, der både er æstetisk, funktionel og af
+            høj kvalitet, er vi her for at hjælpe."
+          </blockquote>
+          <div style="margin-top: 1.8rem;">
+            <a class="btn btn-primary" href="/om-os/">Mød Nordic Stone</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="band-bg">
+      <Image
+        src={ctaFoto}
+        alt=""
+        widths={[800, 1600]}
+        sizes="100vw"
+      />
+    </div>
+    <div class="wrap">
+      <h2>Skal vi finde den rigtige sten til dit projekt?</h2>
+      <p>
+        Ring direkte til Heine, eller send en besked - så vender vi tilbage med
+        professionel og kompetent rådgivning.
+      </p>
+      <a class="tel" href="tel:+4540229696">+45 40 22 96 96</a>
+      <a class="btn btn-primary" href="/kontakt/">Skriv til os</a>
+    </div>
+  </section>
+</Base>

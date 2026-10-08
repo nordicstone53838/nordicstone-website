@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import { Image } from 'astro:assets';
+import heineFoto from '../assets/billeder/heine.jpg';
+import lagerFoto from '../assets/billeder/kantsten-1.jpg';
+---
+
+<Base
+  title="Om os"
+  description="Nordic Stone er specialiseret i genbrugte nordiske natursten. Mød Heine Jensen - og vores værdier: genanvendelse, ansvarlighed og passion."
+>
+  <section class="section">
+    <div class="wrap">
+      <div class="split">
+        <div>
+          <span class="kicker">Om os</span>
+          <h2>Velkommen til Nordic Stone</h2>
+          <div class="prose">
+            <p class="lead">
+              Nordic Stone er specialiseret i genbrugte natursten - primært
+              nordiske varianter som chaussesten, brosten og kantsten.
+            </p>
+            <p>
+              Virksomheden er bygget på mange års erfaring med brugte
+              granitmaterialer. Vores tilgang er enkel: Vi tilbyder brugte
+              natursten til alle projekter - både hos private og virksomheder -
+              og yder professionel og kompetent rådgivning, så du får en
+              belægning, der er æstetisk, funktionel og af høj kvalitet.
+            </p>
+            <p>
+              Bag Nordic Stone står Heine Jensen, som du altid er velkommen til
+              at ringe til for en snak om dit projekt.
+            </p>
+          </div>
+        </div>
+        <div class="foto">
+          <Image
+            src={heineFoto}
+            alt="Heine Jensen foran bunker af genbrugte chaussesten"
+            widths={[500, 900]}
+            sizes="(max-width: 820px) 100vw, 540px"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="split">
+        <div class="foto">
+          <Image
+            src={lagerFoto}
+            alt="Paller med genbrugte granitkantsten på lager"
+            widths={[500, 900]}
+            sizes="(max-width: 820px) 100vw, 540px"
+          />
+        </div>
+        <div>
+          <span class="kicker">Værdier</span>
+          <h2>Det står vi for</h2>
+          <div class="values" style="grid-template-columns: 1fr; margin-top: 1.5rem;">
+            <div class="value-card">
+              <span class="num">01</span>
+              <h3>Genanvendelse</h3>
+              <p>
+                Hele vores forretning bygger på genbrug. Granit holder i
+                århundreder - det ville være synd at lade den ligge ubrugt hen.
+              </p>
+            </div>
+            <div class="value-card">
+              <span class="num">02</span>
+              <h3>Ansvarlighed</h3>
+              <p>
+                Vi står ved det, vi sælger, og rådgiver ærligt om, hvilken sten
+                der passer til din opgave.
+              </p>
+            </div>
+            <div class="value-card">
+              <span class="num">03</span>
+              <h3>Passioneret</h3>
+              <p>
+                Natursten er ikke bare et produkt for os - det er et håndværk
+                og en passion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Vil du høre mere?</h2>
+      <p>Ring til Heine, eller send os en besked - vi svarer hurtigst muligt.</p>
+      <a class="tel" href="tel:+4540229696">+45 40 22 96 96</a>
+      <a class="btn btn-primary" href="/kontakt/">Kontakt os</a>
+    </div>
+  </section>
+</Base>
