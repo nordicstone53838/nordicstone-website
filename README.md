@@ -3,11 +3,11 @@
 Hjemmesiden for Nordic Stone, bygget med [Astro](https://astro.build). Hostes på Vercel:
 hver ændring på `main` lægges automatisk online.
 
-## Sådan retter du siden
+## Sådan rettes siden
 
-Nemmest: åbn [claude.ai/code](https://claude.ai/code), vælg dette repo, og skriv på dansk
-hvad der skal ændres. Claude laver ændringen på en gren, Vercel laver et preview-link,
-og når det ser rigtigt ud, merges ændringen til `main`.
+Ændringer laves af TVG Invest (GitHub: `tvg-invest`, inviteret som collaborator) og
+pushes til `main`. Vercel lægger dem automatisk online. Går noget galt, kan en tidligere
+version gendannes i Vercel under Deployments -> Instant Rollback.
 
 ## Vigtige filer
 
