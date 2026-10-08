@@ -3,6 +3,7 @@ import '../styles/fonts.css';
 import '../styles/global.css';
 import { Image } from 'astro:assets';
 import logo from '../assets/billeder/logo.png';
+import { META_PIXEL_ID } from '../config';
 
 interface Props {
   title: string;
@@ -97,9 +98,27 @@ const {
           </ul>
         </div>
         <div class="footer-meta">
-          Nordic Stone ApS · Skræmvej 7, 9690 Fjerritslev · CVR 43023543 · Besøg på lager efter aftale · <a href="/privatlivspolitik/">Privatlivspolitik</a>
+          Nordic Stone ApS · Skræmvej 7, 9690 Fjerritslev · CVR 43023543 · Besøg på lager efter aftale · <a href="/privatlivspolitik/">Privatlivspolitik</a>{META_PIXEL_ID && <> · <a href="#" data-cookie-settings>Cookie-indstillinger</a></>}
         </div>
       </div>
     </footer>
+
+    {META_PIXEL_ID && (
+      <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie-samtykke" hidden>
+        <p>
+          Vi vil gerne bruge cookies fra Meta (Facebook) til at måle, hvordan vores annoncer virker, og vise
+          dig relevante annoncer. Det sker kun, hvis du siger ja. Læs mere i vores
+          <a href="/privatlivspolitik/#cookies">privatlivspolitik</a>.
+        </p>
+        <div class="cookie-actions">
+          <button type="button" class="btn btn-primary" data-consent="accept">Accepter</button>
+          <button type="button" class="btn btn-primary" data-consent="reject">Afvis</button>
+        </div>
+      </div>
+    )}
+
+    <script>
+      import '../scripts/tracking';
+    </script>
   </body>
 </html>

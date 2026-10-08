@@ -10,3 +10,7 @@ export const LEAD_PHONE_DISPLAY = '+45 40 22 96 96';
 // offentlig og må gerne ligge her i koden.
 // Er nøglen ugyldig eller fjernet, åbner formularerne den besøgendes mailprogram i stedet.
 export const WEB3FORMS_ACCESS_KEY = 'e396b889-b5e1-4ba0-9f28-e7fb02454f2f';
+
+// Meta Pixel-ID (Events Manager -> Datakilder). Tom streng = ingen tracking og intet
+// cookie-banner. Pixel indlæses først, når den besøgende har accepteret cookies.
+export const META_PIXEL_ID = '';

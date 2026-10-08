@@ -77,6 +77,7 @@ export function setupContactForm(formId: string, options: ContactFormOptions) {
 
       form.reset();
       showStatus('ok', options.successMessage);
+      window.nsTrack?.('Lead', { formular: formId });
     } catch (err) {
       console.error('Formular kunne ikke sendes:', err);
       showStatus(

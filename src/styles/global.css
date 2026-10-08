@@ -622,3 +622,26 @@ img { max-width: 100%; display: block; }
   color: var(--ink-soft);
 }
 .site-footer .footer-meta a { color: inherit; text-decoration: underline; }
+
+/* --- Cookie-banner --- */
+.cookie-banner {
+  position: fixed;
+  left: 1rem;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  max-width: 40rem;
+  margin: 0 auto;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.2rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p { margin: 0; font-size: 0.92rem; color: var(--ink-soft); line-height: 1.5; }
+.cookie-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.cookie-actions .btn { flex: 1 1 8rem; border: none; cursor: pointer; justify-content: center; }
